@@ -1,0 +1,28 @@
+Package: MTensGS
+Type: Package
+Title: Multi-trait ensemble Genomic Selection
+Version: 0.0.0.9000
+Authors: 
+    person(given = "Nick",
+           family = "Fradgley",
+           role = "aut",
+           email = "nick.fradgley@niab.com")
+Description: What the package does (one paragraph).
+Encoding: UTF-8
+Imports:
+    lme4,
+    viridis,
+    missForest,
+    parallel,
+    doParallel,
+    rrBLUP,
+    randomForest,
+    glmnet,
+    data.table,
+    gbm,
+    xgboost,
+    matrixcalc,
+    BGLR
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
