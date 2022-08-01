@@ -10,22 +10,22 @@ marker.QC(
   cutoff = 0.8,
   min.maf = 0.05,
   max.NAs = 0.1,
+  n.cores = NULL,
   verbose = T
 )
 }
 \arguments{
-\item{marker.mat}{NxM marker matrix with row names and column names. Markers coded as 0,1,2
-for hom, het,hom.}
+\item{marker.mat}{NxM marker matrix with row names and column names. Markers coded as 0,1,2 for hom, het,hom.}
 
 \item{impute}{Logical whether to run imputation step. Default is TRUE}
 
 \item{cutoff}{correlation threshold for pruning. Numeric between 0 and 1. Default is 0.8}
 
-\item{min.maf}{Minimum minor allele frequency to keep. Numeric between 0 and 0.5. Default
-is 0.05}
+\item{min.maf}{Minimum minor allele frequency to keep. Numeric between 0 and 0.5. Default is 0.05}
 
-\item{max.NAs}{Maximum proportion of NA missing data Numeric between 0 and 1. Default is
-0.1}
+\item{max.NAs}{Maximum proportion of NA missing data Numeric between 0 and 1. Default is 0.1}
+
+\item{n.cores}{Number of cores that can be used to run imputation in parallel. The Default detectcores() from Parallel will use available multiple cores on a Windows OS but n.cores should be defined when running on a HPC or other OS.}
 
 \item{verbose}{Logical whether to print progress. Default is TRUE.}
 }
@@ -33,7 +33,17 @@ is 0.05}
 A NxM marker matrix.
 }
 \description{
-Uses a SNP marker matrix and sequentially filters for missing data, imputes
-remaining missing NA SNP alleles per marker,
-filters for minor allele frequency and 'prunes' markers based on marker correlation.
+Uses a SNP marker matrix and sequentially filters for missing data, imputes remaining missing NA SNP alleles per marker, filters for minor allele frequency and 'prunes' markers based on marker correlation.
+}
+\examples{
+library(MTensGS)
+data(TGdata)
+
+QCd.markers<-marker.QC(marker.mat = TGgenos)
+
+#Check size of new marker dataset
+dim(TGgenos)
+dim(QCd.markers)
+
+
 }

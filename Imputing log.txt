@@ -1,0 +1,380 @@
+starting worker pid=15432 on localhost:11177 at 10:43:32.962
+starting worker pid=3368 on localhost:11177 at 10:43:33.123
+starting worker pid=17812 on localhost:11177 at 10:43:33.275
+starting worker pid=10744 on localhost:11177 at 10:43:33.427
+starting worker pid=16200 on localhost:11177 at 10:43:33.593
+starting worker pid=10504 on localhost:11177 at 10:43:33.748
+starting worker pid=16576 on localhost:11177 at 10:43:34.061
+starting worker pid=14384 on localhost:11177 at 10:43:34.220
+starting worker pid=3808 on localhost:11177 at 10:43:34.376
+starting worker pid=7720 on localhost:11177 at 10:43:34.534
+starting worker pid=1400 on localhost:11177 at 10:43:34.702
+starting worker pid=6616 on localhost:11177 at 10:43:34.855
+starting worker pid=11580 on localhost:11177 at 10:43:35.006
+starting worker pid=10288 on localhost:11177 at 10:43:35.155
+starting worker pid=14320 on localhost:11177 at 10:43:35.312
+starting worker pid=17404 on localhost:11177 at 10:43:35.464
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+Loading required package: MTensGS
+loaded MTensGS and set parent environment
+randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+[1] "|1%"
+[1] "Estimated time left:"
+Time difference of 230.1981 secs
+[1] "|2%"
+[1] "Estimated time left:"
+Time difference of 122.9078 secs
+[1] "|3%"
+[1] "Estimated time left:"
+Time difference of 88.82222 secs
+[1] "|4%"
+[1] "Estimated time left:"
+Time difference of 79.57017 secs
+[1] "|5%"
+[1] "Estimated time left:"
+Time difference of 71.11349 secs
+[1] "|6%"
+[1] "Estimated time left:"
+Time difference of 65.27189 secs
+[1] "|7%"
+[1] "Estimated time left:"
+Time difference of 62.44755 secs
+[1] "|8%"
+[1] "Estimated time left:"
+Time difference of 59.93468 secs
+[1] "|9%"
+[1] "Estimated time left:"
+Time difference of 57.20064 secs
+[1] "|10%"
+[1] "Estimated time left:"
+Time difference of 56.08422 secs
+[1] "|11%"
+[1] "Estimated time left:"
+Time difference of 54.07565 secs
+[1] "|12%"
+[1] "Estimated time left:"
+Time difference of 53.88517 secs
+[1] "|13%"
+[1] "Estimated time left:"
+Time difference of 51.93963 secs
+[1] "|14%"
+[1] "Estimated time left:"
+Time difference of 50.5396 secs
+[1] "|15%"
+[1] "Estimated time left:"
+Time difference of 49.01926 secs
+[1] "|16%"
+[1] "Estimated time left:"
+Time difference of 48.174 secs
+[1] "|17%"
+[1] "Estimated time left:"
+Time difference of 47.3236 secs
+[1] "|18%"
+[1] "Estimated time left:"
+Time difference of 46.29828 secs
+[1] "|19%"
+[1] "Estimated time left:"
+Time difference of 45.1922 secs
+[1] "|20%"
+[1] "Estimated time left:"
+Time difference of 44.30597 secs
+[1] "|21%"
+[1] "Estimated time left:"
+Time difference of 43.58152 secs
+[1] "|22%"
+[1] "Estimated time left:"
+Time difference of 42.89457 secs
+[1] "|23%"
+[1] "Estimated time left:"
+Time difference of 41.7258 secs
+[1] "|24%"
+[1] "Estimated time left:"
+Time difference of 41.22398 secs
+[1] "|25%"
+[1] "Estimated time left:"
+Time difference of 40.34935 secs
+[1] "|26%"
+[1] "Estimated time left:"
+Time difference of 39.39249 secs
+[1] "|27%"
+[1] "Estimated time left:"
+Time difference of 38.78912 secs
+[1] "|28%"
+[1] "Estimated time left:"
+Time difference of 38.2657 secs
+[1] "|29%"
+[1] "Estimated time left:"
+Time difference of 37.5027 secs
+[1] "|30%"
+[1] "Estimated time left:"
+Time difference of 36.77191 secs
+[1] "|31%"
+[1] "Estimated time left:"
+Time difference of 36.25279 secs
+[1] "|32%"
+[1] "Estimated time left:"
+Time difference of 35.65746 secs
+[1] "|33%"
+[1] "Estimated time left:"
+Time difference of 35.37375 secs
+[1] "|34%"
+[1] "Estimated time left:"
+Time difference of 34.86104 secs
+[1] "|35%"
+[1] "Estimated time left:"
+Time difference of 34.18234 secs
+[1] "|36%"
+[1] "Estimated time left:"
+Time difference of 33.78628 secs
+[1] "|37%"
+[1] "Estimated time left:"
+Time difference of 32.93419 secs
+[1] "|38%"
+[1] "Estimated time left:"
+Time difference of 32.82249 secs
+[1] "|39%"
+[1] "Estimated time left:"
+Time difference of 32.02662 secs
+[1] "|40%"
+[1] "Estimated time left:"
+Time difference of 31.62096 secs
+[1] "|41%"
+[1] "Estimated time left:"
+Time difference of 30.81809 secs
+[1] "|42%"
+[1] "Estimated time left:"
+Time difference of 30.27098 secs
+[1] "|43%"
+[1] "Estimated time left:"
+Time difference of 29.81101 secs
+[1] "|44%"
+[1] "Estimated time left:"
+Time difference of 29.12889 secs
+[1] "|45%"
+[1] "Estimated time left:"
+Time difference of 28.59909 secs
+[1] "|46%"
+[1] "Estimated time left:"
+Time difference of 28.11602 secs
+[1] "|47%"
+[1] "Estimated time left:"
+Time difference of 27.98519 secs
+[1] "|48%"
+[1] "Estimated time left:"
+Time difference of 27.24055 secs
+[1] "|49%"
+[1] "Estimated time left:"
+Time difference of 26.76681 secs
+[1] "|50%"
+[1] "Estimated time left:"
+Time difference of 26.14321 secs
+[1] "|51%"
+[1] "Estimated time left:"
+Time difference of 25.64459 secs
+[1] "|52%"
+[1] "Estimated time left:"
+Time difference of 25.14923 secs
+[1] "|53%"
+[1] "Estimated time left:"
+Time difference of 24.53993 secs
+[1] "|54%"
+[1] "Estimated time left:"
+Time difference of 24.22729 secs
+[1] "|55%"
+[1] "Estimated time left:"
+Time difference of 23.56123 secs
+[1] "|56%"
+[1] "Estimated time left:"
+Time difference of 23.0642 secs
+[1] "|57%"
+[1] "Estimated time left:"
+Time difference of 22.52991 secs
+[1] "|58%"
+[1] "Estimated time left:"
+Time difference of 21.97521 secs
+[1] "|59%"
+[1] "Estimated time left:"
+Time difference of 21.42966 secs
+[1] "|60%"
+[1] "Estimated time left:"
+Time difference of 20.83372 secs
+[1] "|61%"
+[1] "Estimated time left:"
+Time difference of 20.34467 secs
+[1] "|62%"
+[1] "Estimated time left:"
+Time difference of 19.87607 secs
+[1] "|63%"
+[1] "Estimated time left:"
+Time difference of 19.24974 secs
+[1] "|64%"
+[1] "Estimated time left:"
+Time difference of 18.77049 secs
+[1] "|65%"
+[1] "Estimated time left:"
+Time difference of 18.18598 secs
+[1] "|66%"
+[1] "Estimated time left:"
+Time difference of 17.71223 secs
+[1] "|67%"
+[1] "Estimated time left:"
+Time difference of 17.22896 secs
+[1] "|68%"
+[1] "Estimated time left:"
+Time difference of 16.73428 secs
+[1] "|69%"
+[1] "Estimated time left:"
+Time difference of 16.1413 secs
+[1] "|70%"
+[1] "Estimated time left:"
+Time difference of 15.65425 secs
+[1] "|71%"
+[1] "Estimated time left:"
+Time difference of 15.13508 secs
+[1] "|72%"
+[1] "Estimated time left:"
+Time difference of 14.58298 secs
+[1] "|73%"
+[1] "Estimated time left:"
+Time difference of 14.09694 secs
+[1] "|74%"
+[1] "Estimated time left:"
+Time difference of 13.56361 secs
+[1] "|75%"
+[1] "Estimated time left:"
+Time difference of 13.06508 secs
+[1] "|76%"
+[1] "Estimated time left:"
+Time difference of 12.51354 secs
+[1] "|77%"
+[1] "Estimated time left:"
+Time difference of 12.01728 secs
+[1] "|78%"
+[1] "Estimated time left:"
+Time difference of 11.51366 secs
+[1] "|79%"
+[1] "Estimated time left:"
+Time difference of 11.00617 secs
+[1] "|80%"
+[1] "Estimated time left:"
+Time difference of 10.48305 secs
+[1] "|81%"
+[1] "Estimated time left:"
+Time difference of 9.973725 secs
+[1] "|82%"
+[1] "Estimated time left:"
+Time difference of 9.468973 secs
+[1] "|83%"
+[1] "Estimated time left:"
+Time difference of 8.969612 secs
+[1] "|84%"
+[1] "Estimated time left:"
+Time difference of 8.479161 secs
+[1] "|85%"
+[1] "Estimated time left:"
+Time difference of 7.958674 secs
+[1] "|86%"
+[1] "Estimated time left:"
+Time difference of 7.453025 secs
+[1] "|87%"
+[1] "Estimated time left:"
+Time difference of 6.965435 secs
+[1] "|88%"
+[1] "Estimated time left:"
+Time difference of 6.432436 secs
+[1] "|89%"
+[1] "Estimated time left:"
+Time difference of 5.923629 secs
+[1] "|90%"
+[1] "Estimated time left:"
+Time difference of 5.423708 secs
+[1] "|91%"
+[1] "Estimated time left:"
+Time difference of 4.90147 secs
+[1] "|92%"
+[1] "Estimated time left:"
+Time difference of 4.38009 secs
+[1] "|93%"
+[1] "Estimated time left:"
+Time difference of 3.866359 secs
+[1] "|94%"
+[1] "Estimated time left:"
+Time difference of 3.34682 secs
+[1] "|95%"
+[1] "Estimated time left:"
+Time difference of 2.833331 secs
+[1] "|96%"
+[1] "Estimated time left:"
+Time difference of 2.326494 secs
+[1] "|97%"
+[1] "Estimated time left:"
+Time difference of 1.794645 secs
+[1] "|98%"
+[1] "Estimated time left:"
+Time difference of 1.284051 secs
+[1] "|99%"
+[1] "Estimated time left:"
+Time difference of 0.7736796 secs
+[1] "|100%"
+[1] "Estimated time left:"
+Time difference of 0.2450229 secs

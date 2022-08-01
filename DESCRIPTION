@@ -7,20 +7,19 @@ Authors:
            family = "Fradgley",
            role = "aut",
            email = "nick.fradgley@niab.com")
-Description: What the package does (one paragraph).
+Description: Pipeline for performing Multi-trait ensemble genomic selection for crop breeding inbred lines. QC and clean SNP marker data, cross validate prediction accuracy for several base prediction models and multi-trait ensembles. Predictions can be made for new genotypes with SNP marker data and multi-trait selection indices can be visualised.
 Encoding: UTF-8
 Imports:
     lme4,
     viridis,
-    missForest,
     parallel,
     doParallel,
     rrBLUP,
     randomForest,
     glmnet,
     data.table,
+    ranger,
     gbm,
-    xgboost,
     matrixcalc,
     BGLR
 LazyData: true

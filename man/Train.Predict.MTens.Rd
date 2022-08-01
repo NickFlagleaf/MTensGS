@@ -9,10 +9,13 @@ Train.Predict.MTens(
   New.Genos,
   Phenos,
   n.valid.folds = 8,
-  rf.ntrees = 300,
-  gbm.ntrees = 200,
-  n.cores = detectCores() - 1,
-  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM", "XGB")
+  n.valid.rounds = 3,
+  rf.ntrees = 400,
+  gbm.ntrees = 300,
+  n.cores = NULL,
+  bglr.saveAt = NULL,
+  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
+  verbose = 2
 )
 }
 \arguments{
@@ -24,14 +27,16 @@ values. Row names are Genotype ID names and column are SNP marker names.}
 
 \item{Phenos}{Data frame of N x p trait data for genotypes in the training set. Row names are Genotype ID matching row names of Genos. Column names are trait names. Missing data is allowed.}
 
-\item{n.valid.folds}{(integer) number of validation folds to run within each test fold. Default if 8.}
+\item{n.valid.folds}{(integer) number of validation folds to run for each trait and base model. Default is 8.}
 
-\item{rf.ntrees}{(integer) Number of trees to use for each random forest model}
+\item{rf.ntrees}{(integer) Number of trees to use for each Random forest model}
 
 \item{gbm.ntrees}{(integer) Max number of trees to use for each GBM model}
 
 \item{n.cores}{Number of cores that can be used to run cross validation of RF, GBM and XGB models. The Default detectcores() from Parallel will use available multiple
 cores on a Windows OS but n.cores should be defined when running on a HPC or other OS.}
+
+\item{bglr.saveAt}{file path location to save temporary data files for 'BGLR' model functions. Using a local folder may speed up computing time. Default is the current working directory.}
 
 \item{base.models}{\emph{vector} of base model names to use. Options include:
 c("rrblup","EGBLUP","RKHS","LASSO","RF","GBM","XGB")
@@ -52,29 +57,45 @@ determine optimum tree iteration to use. cross validations can be run in paralle
 -\strong{XGB} Extreme Gradient Boosting machine learning implemented in the xgboost package. A hyperparameter grid search is performed accross different tree depth and shrinkage
 parameters and each model is 5-fold cross validated  to determine optimum tree iteration. May take a long time...}
 
-\item{CV.groups}{(list) of vectors containing Genotype ID names. Cross validation can also be performed across predefined subsets of genotypes.}
-
 \item{verbose}{Level of progress to print throughout. 0 = none; 1 = some; 2 = all.}
+
+\item{n.CV.rounds}{\emph{integer} number of rounds of k-fold cross validation for test folds to perform. Default is 2}
 }
 \value{
 Returns a list object of:
 
--\strong{All out-of-fold predictions} for all genotypes for base prediction models, genetic model ensemble and multi-trait ensemble models for each trait.
-
--\strong{Phenotype data} all observed multi-trait input data.
-
--\strong{Prediction accuracies} list of correlation coeficient (r) for each model for each trait.
-
--\strong{Base models} \emph{vector} of base prediction models used.
+-\strong{All new predictions} \emph{array} Predictions for all new genotypes for base prediction models. Array with dimensions of genotypes,  base models and traits.
 
 -\strong{Traits} \emph{vector} of trait names used.
 
--\strong{CV fold allocations} A two level list of length = n.fold.rounds, each containing the genotype ID names allocated to each test fold.
-
-#' @details Ensemble predictions for multiple genetic models and multiple traits are trained on out-of-validation fold predictions using several model approaches.
-Including a range of genetic models that capture a diversity of genetic architectures may improve accuracy of ensembles. Unbalanced phenotyping across
-genotypes may increase accuracy of multi-trait ensembles when several related but partially phenotyped traits are included.
+-\strong{Base models} \emph{vector} of base prediction models used.
 }
 \description{
 Trains several base genomic prediction models as well as multiple genetic model and multi-trait ensemble prediction models. Minimum input requirements are SNP genotype data and multi-trait phenotype data base prediction models should run well on default parameters.
+}
+\details{
+Ensemble predictions for for genotypes in New.Genos for multiple genetic models and multiple traits are made after trained on out-of-validation fold predictions using several model
+approaches in the Genos.train and Phenos objects. Including a range of genetic models that capture a diversity of genetic architectures may improve accuracy of ensembles but running all available base models takes a long time. Unbalanced phenotyping across
+genotypes may increase accuracy of multi-trait ensembles when several related but partially phenotyped traits are included.
+}
+\examples{
+library(MTensGS)
+data(TGdata)
+
+QCd.markers<-marker.QC(marker.mat = TGgenos)
+
+#Split the dataset in two
+old.genos<-QCd.markers[1:300,]
+new.genos<-QCd.markers[301:376,]
+old.phens<-TGphenos[1:300,]
+
+new_preds<-Train.Predict.MTens(Genos.train = old.genos,
+                               New.Genos = new.genos,
+                               Phenos = old.phens,
+                               n.valid.rounds = 1,
+                               n.valid.folds = 6,
+                               base.models = c("rrblup","LASSO"))
+
+
+
 }

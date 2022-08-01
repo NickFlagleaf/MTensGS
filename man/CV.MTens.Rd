@@ -7,14 +7,16 @@
 CV.MTens(
   Genos,
   Phenos,
-  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM", "XGB"),
+  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
   n.test.folds = 10,
   n.valid.folds = 8,
-  n.fold.rounds = 2,
+  n.CV.rounds = 2,
+  n.valid.rounds = 3,
   CV.groups = NULL,
-  n.cores = detectCores(),
-  rf.ntrees = 300,
-  gbm.ntrees = 200,
+  n.cores = NULL,
+  rf.ntrees = 400,
+  gbm.ntrees = 300,
+  bglr.saveAt = NULL,
   verbose = 2
 )
 }
@@ -41,25 +43,26 @@ cross validated with several values of lambda.
 can be increased using rf.ntrees if needed.
 
 -\strong{GBM} Gradient Boosting Machine learning models implemented in the gbm package. May take a long time... 5 fold cross validation is performed on each model to
-determine optimum tree iteration to use. cross validations can be run in parallel on multiple cores by setting n.cores if not defined by default.
-
--\strong{XGB} Extreme Gradient Boosting machine learning implemented in the xgboost package. A hyperparameter grid search is performed accross different tree depth and shrinkage
-parameters and each model is 5-fold cross validated  to determine optimum tree iteration. May take a long time...}
+determine optimum tree iteration to use. cross validations can be run in parallel on multiple cores by setting n.cores if not defined by default.}
 
 \item{n.test.folds}{\emph{integer} number of test folds to run. Default if 10.}
 
 \item{n.valid.folds}{\emph{integer} number of validation folds to run within each test fold. Default if 8.}
 
-\item{n.fold.rounds}{\emph{integer} number of rounds of k-fold cross validation to perform. Default is 2}
+\item{n.CV.rounds}{\emph{integer} number of rounds of k-fold cross validation for test folds to perform. Default is 2}
+
+\item{n.valid.rounds}{\emph{integer} number of rounds of k-fold cross validation for internal validation folds to perform. Default is 3}
 
 \item{CV.groups}{\emph{list} of vectors containing Genotype ID names. Cross validation can also be performed across predefined subsets of genotypes.}
 
-\item{n.cores}{Number of cores that can be used to run cross validation of RF, GBM and XGB models. The Default detectcores() from Parallel will use available multiple
+\item{n.cores}{Number of cores that can be used to run cross validation of RF, GBM models. The Default detectcores() from Parallel will use available multiple
 cores on a Windows OS but n.cores should be defined when running on a HPC or other OS.}
 
-\item{rf.ntrees}{\emph{integer} Number of trees to use for each random forest model}
+\item{rf.ntrees}{\emph{integer} Number of trees to use for each random forest model. Default is 400.}
 
-\item{gbm.ntrees}{\emph{integer} Max number of trees to use for each GBM model}
+\item{gbm.ntrees}{\emph{integer} Max number of trees to use for each GBM model. Default is 300.}
+
+\item{bglr.saveAt}{file path location to save temporary data files for 'BGLR' model functions. Using a local folder may speed up computing time. Default is the current working directory.}
 
 \item{verbose}{Level of progress to print throughout. 0 = none; 1 = some; 2 = all.}
 }
@@ -70,13 +73,13 @@ Returns a list object of:
 
 -\strong{Phenotype data} all observed multi-trait input data.
 
--\strong{Prediction accuracies} list of correlation coeficient (r) for each model for each trait.
+-\strong{Prediction accuracies} list of correlation coefficients (r) for each model for each trait.
 
 -\strong{Base models} \emph{vector} of base prediction models used.
 
 -\strong{Traits} \emph{vector} of trait names used.
 
--\strong{CV fold allocations} A two level list of length = n.fold.rounds, each containing the genotype ID names allocated to each test fold.
+-\strong{CV fold allocations} A two level list of length = n.CV.rounds, each containing the genotype ID names allocated to each test fold.
 }
 \description{
 Performs cross validation for several base genomic prediction models as well as multiple genetic model and multi-trait ensemble prediction models. Minimum input requirements are SNP genotype data and multi-trait phenotype data base prediction models should run well on
@@ -86,4 +89,16 @@ default parameters.
 Ensemble predictions for multiple genetic models and multiple traits are trained on out-of-validation fold predictions using several model approaches.
 Including a range of genetic models that capture a diversity of genetic architectures may improve accuracy of ensembles. Unbalanced phenotyping across
 genotypes may increase accuracy of multi-trait ensembles when several related but partially phenotyped traits are included.
+}
+\examples{
+library(MTensGS)
+data(TGdata)
+
+QCd.markers<-marker.QC(marker.mat = TGgenos)
+
+MTens.CV.results<-CV.MTens(Genos = QCd.markers
+                           ,Phenos = TGphenos
+                           ,base.models = c("rrblup","LASSO")
+                           ,n.CV.rounds = 1,n.valid.rounds=1)
+
 }
