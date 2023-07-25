@@ -14,7 +14,7 @@ Train.Predict.MTens(
   gbm.ntrees = 300,
   n.cores = NULL,
   bglr.saveAt = NULL,
-  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
+  base.models = c("rrblup", "BayesB", "BayesC", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
   verbose = 2
 )
 }
@@ -39,11 +39,15 @@ cores on a Windows OS but n.cores should be defined when running on a HPC or oth
 \item{bglr.saveAt}{file path location to save temporary data files for 'BGLR' model functions. Using a local folder may speed up computing time. Default is the current working directory.}
 
 \item{base.models}{\emph{vector} of base model names to use. Options include:
-c("rrblup","EGBLUP","RKHS","LASSO","RF","GBM","XGB")
+c("rrblup","EGBLUP","RKHS","LASSO","RF","GBM")
 
 -\strong{rrblup} Ridge regression/GBLUP implemented in the rrblup package using a linear GRM.
 
 -\strong{EGBLUP} The Extended GBLUP incorporating a linear and epistatic GRM kernel implemented in the BGLR package.
+
+-\strong{BayesB} Bayesian linear regression of marker effects with point of mass at zero plus t-slab priors implemented in the BGLR package.
+
+-\strong{BayesC} Bayesian linear regression of marker effects with point of mass at zero plus Gaussian slab priors implemented in the BGLR package.
 
 -\strong{RKHS} Replicating Kernel Hilbert Space fitting multiple Gaussian kernels using the kernel averaging method for several bandwidth parameters. Implemented in the BGLR package.
 
@@ -52,10 +56,7 @@ c("rrblup","EGBLUP","RKHS","LASSO","RF","GBM","XGB")
 -\strong{RF} Random forest decision tree ensemble learning method implemented in the randomForest package. Forests of 300 trees are grown as defualt but can be increased using rf.ntrees if needed.
 
 -\strong{GBM} Gradient Boosting Machine learning models implemented in the gbm package. May take a long time... 5 fold cross validation is performed on each model to
-determine optimum tree iteration to use. cross validations can be run in parallel on multiple cores by setting n.cores if not defined by default.
-
--\strong{XGB} Extreme Gradient Boosting machine learning implemented in the xgboost package. A hyperparameter grid search is performed accross different tree depth and shrinkage
-parameters and each model is 5-fold cross validated  to determine optimum tree iteration. May take a long time...}
+determine optimum tree iteration to use. cross validations can be run in parallel on multiple cores by setting n.cores if not defined by default.}
 
 \item{verbose}{Level of progress to print throughout. 0 = none; 1 = some; 2 = all.}
 
@@ -71,7 +72,7 @@ Returns a list object of:
 -\strong{Base models} \emph{vector} of base prediction models used.
 }
 \description{
-Trains several base genomic prediction models as well as multiple genetic model and multi-trait ensemble prediction models. Minimum input requirements are SNP genotype data and multi-trait phenotype data base prediction models should run well on default parameters.
+Trains several base genomic prediction models as well as multiple genetic model and multi-trait ensemble prediction models. Minimum input requirements are bi-alleleic  marker genotype data and multi-trait phenotype data. Base prediction models should run well on default parameters.
 }
 \details{
 Ensemble predictions for for genotypes in New.Genos for multiple genetic models and multiple traits are made after trained on out-of-validation fold predictions using several model

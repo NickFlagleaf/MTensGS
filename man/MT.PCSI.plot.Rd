@@ -2,13 +2,13 @@
 % Please edit documentation in R/MTensGS_functions.R
 \name{MT.PCSI.plot}
 \alias{MT.PCSI.plot}
-\title{Plot multi-trait Principle component selection indices}
+\title{Plot multi-trait Principal component selection indices}
 \usage{
 MT.PCSI.plot(
   X,
   SI.traits = NULL,
   weights = NULL,
-  model = "MT.ensemble",
+  model = "MeanMtens",
   col1 = NULL,
   col2 = NULL,
   cex1 = 0.7,

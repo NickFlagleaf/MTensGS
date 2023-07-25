@@ -7,7 +7,7 @@
 CV.MTens(
   Genos,
   Phenos,
-  base.models = c("rrblup", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
+  base.models = c("rrblup", "BayesB", "BayesC", "EGBLUP", "RKHS", "LASSO", "RF", "GBM"),
   n.test.folds = 10,
   n.valid.folds = 8,
   n.CV.rounds = 2,
@@ -27,11 +27,15 @@ are assumed. Must have no missing (NA) values. Row names are Genotype ID names a
 \item{Phenos}{Data frame of N x p trait data. Row names are Genotype ID matching row names of Genos. Column names are trait names. Missing data is allowed.}
 
 \item{base.models}{\emph{vector} of base model names to use. Options include:
-c("rrblup","EGBLUP","RKHS","LASSO","RF","GBM","XGB")
+c("rrblup","EGBLUP","BayesB","BayesC","RKHS","LASSO","RF","GBM")
 
 -\strong{rrblup} Ridge regression/GBLUP implemented in the rrblup package using a linear GRM.
 
 -\strong{EGBLUP} The Extended GBLUP incorporating a linear and epistatic GRM kernel implemented in the BGLR package.
+
+-\strong{BayesB} Bayesian linear regression of marker effects with point of mass at zero plus t-slab priors implemented in the BGLR package.
+
+-\strong{BayesC} Bayesian linear regression of marker effects with point of mass at zero plus Gaussian slab priors implemented in the BGLR package.
 
 -\strong{RKHS} Replicating Kernel Hilbert Space fitting multiple Gaussian kernels using the kernel averaging method for several bandwidth
 parameters. Implemented in the BGLR package.
@@ -39,10 +43,10 @@ parameters. Implemented in the BGLR package.
 -\strong{LASSO} Linear Shrinkage model using the LASSO penalty to shrink most SNP effects to 0. Implemented in the glmnet package. Each model is
 cross validated with several values of lambda.
 
--\strong{RF} Random forest decision tree ensemble learning method implemented in the randomForest package.  Forests of 300 trees are grown as defualt but
+-\strong{RF} Random forest decision tree ensemble learning method implemented in the randomForest package.  Forests of 300 trees are grown as default but
 can be increased using rf.ntrees if needed.
 
--\strong{GBM} Gradient Boosting Machine learning models implemented in the gbm package. May take a long time... 5 fold cross validation is performed on each model to
+-\strong{GBM} Gradient Boosting Machine learning models implemented in the gbm package. This may take a long time... 5 fold cross validation is performed on each model to
 determine optimum tree iteration to use. cross validations can be run in parallel on multiple cores by setting n.cores if not defined by default.}
 
 \item{n.test.folds}{\emph{integer} number of test folds to run. Default if 10.}
@@ -82,8 +86,8 @@ Returns a list object of:
 -\strong{CV fold allocations} A two level list of length = n.CV.rounds, each containing the genotype ID names allocated to each test fold.
 }
 \description{
-Performs cross validation for several base genomic prediction models as well as multiple genetic model and multi-trait ensemble prediction models. Minimum input requirements are SNP genotype data and multi-trait phenotype data base prediction models should run well on
-default parameters.
+Performs cross validation for several base genetic models for multiple traits. Multi-trait and multi-model ensemble prediction models are then fitted with the out-of-validation fold predictions.
+Minimum input requirements are bi-allelic genotype data and multi-trait phenotype data. Base prediction models should run well on default parameters.
 }
 \details{
 Ensemble predictions for multiple genetic models and multiple traits are trained on out-of-validation fold predictions using several model approaches.
