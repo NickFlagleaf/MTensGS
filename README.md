@@ -49,7 +49,7 @@ new_preds<-Train.Predict.MTens(Genos.train = old.genos,
                                base.models = c("rrblup","LASSO","RF"))
 ```
 
-### Ploting and setting a multi-trait selection index
+### Plotting and setting a multi-trait selection index
 Once predictions for new lines have been made, the `MT.PCSI.plot()` function can be used to plot a PCA visualisation of the of the multi-trait predictions and set a selection index based on weightings for each trait. In this example protein (PROT) is given double the weighting in comparison to the other three yield traits.
 
 ```
